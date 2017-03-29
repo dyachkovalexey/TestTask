@@ -1,0 +1,5 @@
+Показать ТОП 10 активных пользователей:
+SELECET * FROM user_blog ORDER BY post_count DISC LIMIT 10;
+
+Найти все категории, в которых есть посты пользователя А, но нет постов пользователя Б:
+SELECT * FROM Category WHERE (SELECT category_id FROM blog_category GROUP BY category_id HAVING COUNT(*)=1)=category_id;
